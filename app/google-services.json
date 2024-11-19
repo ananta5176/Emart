@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "667754225851",
+    "project_id": "e-commerce-app-7944c",
+    "storage_bucket": "e-commerce-app-9dce1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667754225851:android:8085c4e72601cb1349099e",
+        "android_client_info": {
+          "package_name": "com.meetozan.e_commerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667754225851-1hp0ep961qj9bgm6nm4d41apjnd2kmoq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBji4_4_1S7GQE7Cghhgu5erLf0Ek6WLr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667754225851-1hp0ep961qj9bgm6nm4d41apjnd2kmoq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
