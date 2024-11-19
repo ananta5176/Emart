@@ -5,14 +5,15 @@
     android:id="@+id/shoppingCartLayout"
     tools:context=".ui.shopping_cart.ShoppingCartFragment">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/lightGray">
 
+        <!-- Toolbar -->
         <TextView
             android:id="@+id/shoppingCartToolBar"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:background="@color/secondaryColor"
             android:fontFamily="@font/alata"
@@ -21,27 +22,34 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- RecyclerView -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/shoppingCartRv"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/shoppingCartToolBar"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="16dp"
-            android:visibility="gone" />
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/shoppingCartToolBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- Empty Cart View -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvSearchNotFound"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/shoppingCartToolBar"
-            android:layout_alignParentBottom="true"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:backgroundTint="@color/lightGray"
-            android:visibility="visible">
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/shoppingCartToolBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,20 +100,23 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Total Price View -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvShoppingCartTotal"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_marginBottom="-8dp"
             android:backgroundTint="@color/white"
             android:elevation="10dp"
             android:visibility="invisible"
             app:cardCornerRadius="10dp"
             app:strokeColor="@color/black"
-            app:strokeWidth="0.7dp">
+            app:strokeWidth="0.7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -113,21 +124,19 @@
                     android:id="@+id/tvTotalPriceText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/alata"
                     android:text="@string/total_price"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/tvTotalPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tvTotalPriceText"
-                    android:layout_alignParentStart="true"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="1dp"
                     android:layout_marginBottom="8dp"
@@ -135,28 +144,28 @@
                     android:text=""
                     android:textColor="@color/black"
                     android:textSize="28sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/tvTotalPriceText"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/tvTotalPriceLira"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tvTotalPriceText"
                     android:layout_marginTop="1dp"
                     android:layout_marginBottom="16dp"
-                    android:layout_toEndOf="@id/tvTotalPrice"
                     android:fontFamily="@font/alata"
                     android:text="@string/turkish_lira"
                     android:textColor="@color/black"
-                    android:textSize="28sp" />
+                    android:textSize="28sp"
+                    app:layout_constraintTop_toBottomOf="@id/tvTotalPriceText"
+                    app:layout_constraintStart_toEndOf="@id/tvTotalPrice" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnConfirmCart"
                     style="@style/Widget.Material3.Button.ElevatedButton.Icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
                     android:layout_marginEnd="12dp"
                     android:elevation="12dp"
                     android:fontFamily="@font/alata"
@@ -166,9 +175,13 @@
                     app:icon="@drawable/ic_shopping_cart"
                     app:iconTint="@color/secondaryDarkColor"
                     app:strokeColor="@color/black"
-                    app:strokeWidth="1dp" />
+                    app:strokeWidth="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
-            </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
-    </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
