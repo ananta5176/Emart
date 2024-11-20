@@ -10,20 +10,20 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp">
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/sign_in_padding_horizontal">
 
             <TextView
                 android:id="@+id/tvSignInTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="@dimen/sign_in_title_margin_top"
                 android:fontFamily="@font/alata"
                 android:text="@string/sign_in"
                 android:textColor="@color/primaryColor"
                 android:textSize="36sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.15"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,9 +31,7 @@
                 android:id="@+id/cardSignInEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="70dp"
-                android:layout_marginHorizontal="80dp"
-                app:cardElevation="-2sp"
+                android:layout_marginTop="@dimen/sign_in_card_margin_top"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvSignInTitle">
@@ -46,31 +44,25 @@
                     android:hint="@string/e_mail"
                     android:maxLines="1"
                     app:errorEnabled="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/loginEmailLayout"
                     app:startIconDrawable="@drawable/ic_email_24"
                     app:startIconTint="@color/secondaryColor">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etSignInEmail"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/alata"
                         android:inputType="textEmailAddress"
                         android:maxLength="30"
-                        android:textColorHint="@color/secondaryDarkColor"
-                        tools:ignore="TextContrastCheck,TextContrastCheck" />
+                        android:textColorHint="@color/secondaryDarkColor" />
                 </com.google.android.material.textfield.TextInputLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardSignInPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginHorizontal="80dp"
-                app:cardElevation="-2sp"
+                android:layout_marginTop="@dimen/sign_in_card_margin_top"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardSignInEmail">
@@ -86,31 +78,27 @@
                     app:endIconMode="password_toggle"
                     app:endIconTint="@color/secondaryColor"
                     app:errorEnabled="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/loginEmailLayout"
                     app:startIconDrawable="@drawable/ic_lock"
                     app:startIconTint="@color/secondaryColor">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etSignInPassword"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/alata"
-                        android:inputType="numberPassword"
+                        android:inputType="textPassword"
                         android:maxLength="16"
-                        android:textColorHint="@color/secondaryDarkColor"
-                        tools:ignore="TextContrastCheck,TextContrastCheck" />
+                        android:textColorHint="@color/secondaryDarkColor" />
                 </com.google.android.material.textfield.TextInputLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:id="@+id/tvSignInToSignUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/sign_in_text_margin_top"
                 android:fontFamily="@font/alata"
-                android:text="@string/you_don_t_have_an_account_s_gn_up_now"
+                android:text="@string/you_don_t_have_an_account_sign_up_now"
                 android:textSize="11sp"
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -122,18 +110,15 @@
                 style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="30dp"
-                android:layout_marginHorizontal="100dp"
-                android:backgroundTint="#C3FFC107"
+                android:layout_marginTop="@dimen/sign_in_button_margin_top"
                 android:fontFamily="@font/alata"
                 android:text="@string/login"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:cornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvSignInToSignUp"
+                app:layout_constraintTop_toBottomOf="@id/tvSignInToSignUp"
                 app:strokeColor="@color/primaryLightColor"
                 app:strokeWidth="1dp" />
 
